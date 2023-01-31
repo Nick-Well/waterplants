@@ -122,7 +122,7 @@ def sleepAndShow(Sleeptime):
         print("\n")
         print("minuter kvar: " + str("%.1f" % ((Sleeptime - i) / 60)))
         print("\n")
-        visaADC()
+        visa_adc()
         time.sleep(1)
 
 
@@ -137,7 +137,7 @@ while True:
         display()
         if hour() in range(9, 20):
             print("\n\n\n\n")
-            visaADC()
+            visa_adc()
             if watered == False:
 
                 # om värdet från sensorn störe en 6900 så kommer den köra det under annars hoppar den över till else
@@ -164,7 +164,7 @@ while True:
             print("\n")
             print("sover")
             print("\n")
-            visaADC()
+            visa_adc()
             elses()
 
     except KeyboardInterrupt:
