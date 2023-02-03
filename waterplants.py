@@ -171,9 +171,3 @@ while True:
 GPIO.cleanup()
 print(" god natt!! ")
 
-
-# I have renamed the variable watered to is_watered to make the code more readable and self-explanatory.
-# I have used a more Pythonic expression if 9 <= hour() < 20 to check
-# the time of day instead of if hour() in range(9, 20).
-# I have added a couple of newline characters to make the output clearer.
-# I have fixed some of the English in the comments and print statements.
