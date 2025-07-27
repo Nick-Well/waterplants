@@ -12,6 +12,8 @@ const long sensorDelay = 60;
 const float dl = 2.1 * sekund;
 const int amount = 2 * dl;
 
+const int dry = 50;
+
 bool watered = false;
 int sensorValue = 0;
 int outputValue = 0;        // (0-100)
