@@ -28,8 +28,8 @@ with open("/home/pi/water/config.txt", "rb") as values:
     dry_sensor = int(value[3])
 
 timeout = timeOutS * 3600
-sleepPump = sleepPumpS * 3600
-aktivePumpTime = pumpS * 1.3
+sleep_pump = sleepPumpS * 3600
+aktive_pump_time = pumpS * 1.3
 
 
 def display():
@@ -44,7 +44,7 @@ def display():
 def pump_active(state):
     GPIO.output(channel, GPIO.HIGH if state else GPIO.LOW)
     if state:
-        time.sleep(aktivePumpTime)
+        time.sleep(aktive_pump_time)
 
 
 def get_current_time():
@@ -94,7 +94,7 @@ def manuel():
     sleepPumpS = float(input("How long after watering should the pump sleep (hours): "))
 
 
-def sleepAndShow(inactive_timer):
+def sleep_and_show(inactive_timer):
     for i in range(int(inactive_timer)):
         values = adc.read_adc(adcv, gain=GAIN)
         display()
@@ -105,10 +105,6 @@ def sleepAndShow(inactive_timer):
 
 def is_daytime():
     return start_sensor <= get_current_hour() < stop_sensor
-
-
-def sleep_and_show(timeout):
-    sleepAndShow(timeout)
 
 
 def check_moisture_level():
@@ -127,7 +123,7 @@ def watering_routine():
 
 def saturation_routine():
     log_state("saturation")
-    sleep_and_show(sleepPump)
+    sleep_and_show(sleep_pump)
 
 
 watered = False
